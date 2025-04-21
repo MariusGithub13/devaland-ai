@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devaland AI - Business Growth Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --secondary: #818CF8;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+
+        /* Alert Banner */
+        .alert-banner {
+            background: linear-gradient(90deg, #4F46E5 0%, #818CF8 100%);
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 12rem 8% 8rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 50%, rgba(79,70,229,0.15) 0%, rgba(15,23,42,0) 70%);
+        }
+
+        /* Solutions Grid */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 8%;
+        }
+
+        .solution-card {
+            background: rgba(30,41,59,0.5);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Testimonial Cards */
+        .testimonial-card {
+            background: #1E293B;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin: 2rem 8%;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-item {
+            background: rgba(79,70,229,0.1);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        /* Process Section */
+        .process-steps {
+            padding: 4rem 8%;
+            counter-reset: step;
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 4rem;
+            margin: 3rem 0;
+        }
+
+        .process-step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="alert-banner">
+        🚀 Limited Time Offer: Get a Free AI Consultation Worth $997 - Book Now
+    </div>
+
+    <nav class="navbar">
+        <!-- Navigation from previous example -->
+    </nav>
+
+    <section class="hero">
+        <h1>Transform Your Business with Goal-Driven AI Solutions</h1>
+        <p>Join industry leaders achieving 200% revenue growth and 60% cost reduction</p>
+        <div style="margin: 2rem 0">
+            <a href="#contact" class="cta-button">Get Free AI Audit</a>
+            <a href="#process" class="cta-button">See How It Works</a>
+        </div>
+        <div class="tool-grid">
+            <img src="n8n-logo.svg" alt="n8n" class="tool-logo">
+            <img src="make-logo.svg" alt="Make.com" class="tool-logo">
+            <img src="relevance-ai-logo.svg" alt="Relevance AI" class="tool-logo">
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <div class="testimonial-card">
+        <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <h3>"Devaland's AI Lead Generation delivered 3x more qualified leads"</h3>
+        <p>Devon Rodriguez, Sales Director</p>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h4>3x</h4>
+                <p>More Leads</p>
+            </div>
+            <div class="stat-item">
+                <h4>42%</h4>
+                <p>Conversion Increase</p>
+            </div>
+            <div class="stat-item">
+                <h4>78%</h4>
+                <p>Time Saved</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Solutions Section -->
+    <section class="solutions-grid">
+        <div class="solution-card">
+            <h3>AI Automation</h3>
+            <ul>
+                <li><i class="fas fa-check"></i> Workflow Optimization</li>
+                <li><i class="fas fa-check"></i> Process Automation</li>
+                <li><i class="fas fa-check"></i> System Integration</li>
+            </ul>
+        </div>
+        <div class="solution-card">
+            <h3>Text AI Agents</h3>
+            <ul>
+                <li><i class="fas fa-check"></i> Natural Language Processing</li>
+                <li><i class="fas fa-check"></i> Multi-language Support</li>
+                <li><i class="fas fa-check"></i> Context-aware Responses</li>
+            </ul>
+        </div>
+        <div class="solution-card">
+            <h3>Voice AI Agents</h3>
+            <ul>
+                <li><i class="fas fa-check"></i> Speech Recognition</li>
+                <li><i class="fas fa-check"></i> Voice Biometrics</li>
+                <li><i class="fas fa-check"></i> 24/7 Availability</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Implementation Process -->
+    <section class="process-steps">
+        <div class="process-step">
+            <h3>Strategic Planning</h3>
+            <ul>
+                <li><i class="fas fa-check"></i> Opportunity Assessment</li>
+                <li><i class="fas fa-check"></i> ROI Projections</li>
+                <li><i class="fas fa-check"></i> Solution Roadmap</li>
+            </ul>
+        </div>
+        <div class="process-step">
+            <h3>Design & Development</h3>
+            <ul>
+                <li><i class="fas fa-check"></i> Custom AI Architecture</li>
+                <li><i class="fas fa-check"></i> Agile Development</li>
+                <li><i class="fas fa-check"></i> Rigorous Testing</li>
+            </ul>
+        </div>
+        <div class="process-step">
+            <h3>Implementation & Support</h3>
+            <ul>
+                <li><i class="fas fa-check"></i> Seamless Integration</li>
+                <li><i class="fas fa-check"></i> Comprehensive Training</li>
+                <li><i class="fas fa-check"></i> Ongoing Optimization</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Consultation Section -->
+    <section class="contact-section">
+        <h2>Book Your Free Consultation</h2>
+        <div class="consultation-grid">
+            <div class="consultation-card">
+                <h3>Personalized AI Strategy</h3>
+                <p>Custom roadmap aligned with your business goals</p>
+            </div>
+            <div class="consultation-card">
+                <h3>ROI Assessment</h3>
+                <p>Detailed financial projections for your AI investment</p>
+            </div>
+            <div class="consultation-card">
+                <h3>Implementation Plan</h3>
+                <p>Step-by-step deployment strategy</p>
+            </div>
+        </div>
+        <form class="ai-form">
+            <!-- Form inputs from previous example -->
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>Devaland AI</h4>
+                <p>Transforming businesses with AI-powered solutions</p>
+            </div>
+            <div>
+                <h4>Solutions</h4>
+                <ul>
+                    <li>AI Automation</li>
+                    <li>Text AI Agents</li>
+                    <li>Voice AI Agents</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <ul>
+                    <li>Contact</li>
+                    <li>Careers</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; 2024 Devaland AI. All rights reserved.</p>
+    </footer>
+</body>
+</html>
