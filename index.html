@@ -855,6 +855,58 @@
         .mobile-cta {
             display: none;
         }
+
+                /* Tools Section */
+        .tools {
+            padding: 80px 5%;
+            text-align: center;
+            position: relative;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+
+        .tool-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .tool-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .tool-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .tool-card p {
+            color: #94A3B8;
+            font-size: 0.9rem;
+        }
+
     </style>
 </head>
 <body>
@@ -947,6 +999,40 @@
         </div>
     </section>
 
+    <!-- Tools Section -->
+    <section class="tools">
+        <div class="section-title">
+            <h2>Powered by Industry-Leading AI Tools</h2>
+            <p>We leverage the best AI platforms to deliver exceptional results</p>
+        </div>
+        
+        <div class="tools-grid">
+            <div class="tool-card">
+                <img src="https://avatars.githubusercontent.com/u/50119804?s=280&v=4" alt="n8n" class="tool-logo">
+                <h3>n8n</h3>
+                <p>Workflow Automation</p>
+            </div>
+            
+            <div class="tool-card">
+                <img src="https://www.make.com/en/_nuxt/img/make-logo.2f1a1b2.svg" alt="Make.com" class="tool-logo">
+                <h3>Make.com</h3>
+                <p>Integration Platform</p>
+            </div>
+            
+            <div class="tool-card">
+                <img src="https://uploads-ssl.webflow.com/62f5753d8b9f6567b0c9c7a5/62f5753d8b9f65a4a2c9c7f5_Relevance%20AI%20Logo%20-%20Colour%20-%20Transparent%20BG.png" alt="Relevance AI" class="tool-logo">
+                <h3>Relevance AI</h3>
+                <p>AI Development Platform</p>
+            </div>
+            
+            <div class="tool-card">
+                <img src="https://assets-global.website-files.com/64fadf6a5c9f6a3c3e4e0c1e/64fadf6a5c9f6a3c3e4e0c3c_Retell%20AI%20Logo.png" alt="Retell.ai" class="tool-logo">
+                <h3>Retell.ai</h3>
+                <p>Voice AI Platform</p>
+            </div>
+        </div>
+    </section>
+    
     <!-- Solutions Section -->
     <section class="solutions" id="solutions">
         <div class="section-title">
