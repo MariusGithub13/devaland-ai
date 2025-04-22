@@ -461,6 +461,74 @@
             font-weight: bold;
         }
 
+        /* Awards Section */
+        .awards {
+            padding: 100px 5%;
+            background: rgba(15, 23, 42, 0.5);
+            position: relative;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .award-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .award-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .award-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(99, 102, 241, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .award-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .award-card p {
+            color: #94A3B8;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .award-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .award-card a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+
         /* Process Section */
         .process {
             padding: 100px 5%;
@@ -777,6 +845,10 @@
             .solution-card {
                 padding: 30px;
             }
+
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Mobile CTA Button - Initially Hidden */
@@ -922,6 +994,32 @@
                     <li>Call Center Automation</li>
                     <li>Interactive Voice Response</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="awards">
+        <div class="section-title">
+            <h2>Industry Recognition</h2>
+            <p>Celebrating our achievements in marketing automation excellence</p>
+        </div>
+        
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>Stellar Business Award 2024</h3>
+                <p>Recognized as <strong><a href="https://stellarbusiness.com/devaland-marketing-srl/" target="_blank" rel="noopener noreferrer">The Best Marketing & Automation Agency</a></strong> in the USA, UK, and Australia for our innovative Klaviyo implementations.</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">
+                    <i class="fas fa-newspaper"></i>
+                </div>
+                <h3>Featured in New York Weekly</h3>
+                <p>Published article: <strong><a href="https://nyweekly.com/tech/marius-andronie-founder-of-devaland-marketing-agency-driving-growth-in-high-tech-automation-marketing/" target="_blank" rel="noopener noreferrer">Driving Growth in High-Tech Automation Marketing</a></strong> highlighting our unique approach to email revenue optimization.</p>
             </div>
         </div>
     </section>
