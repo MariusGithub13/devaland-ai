@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    {% include includes/head.html %}
-    {% if page.stylesheet %}
-    <link rel="stylesheet" href="/assets/css/{{ page.stylesheet }}">
-    {% endif %}
-</head>
+{% include head.html %}
 <body>
-    {% include includes/floating-elements.html %}
-    {% include includes/header.html %}
-    
+    <!-- Floating Background Elements -->
+    <div class="floating-circle circle-1"></div>
+    <div class="floating-circle circle-2"></div>
+
+    {% include navbar.html %}
+
     {{ content }}
-    
-    {% include includes/footer.html %}
-    
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/mobile-menu.js"></script>
-    {% if page.scripts %}
-      {% for script in page.scripts %}
-        <script src="/assets/js/{{ script }}"></script>
-      {% endfor %}
-    {% endif %}
+
+    {% include footer.html %}
+    {% include scripts.html %}
 </body>
 </html>
