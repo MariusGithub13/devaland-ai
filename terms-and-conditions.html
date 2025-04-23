@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - Devaland Automation Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366F1;
+            --primary-dark: #4F46E5;
+            --secondary: #8B5CF6;
+            --accent: #EC4899;
+            --dark: #0F172A;
+            --darker: #020617;
+            --light: #F8FAFC;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Floating Background Elements */
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.15;
+            z-index: -1;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .circle-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--primary);
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .circle-2 {
+            width: 600px;
+            height: 600px;
+            background: var(--secondary);
+            bottom: -150px;
+            right: -100px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 50px); }
+        }
+
+        /* Navigation */
+        .navbar {
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            margin-left: 15px;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Terms Content */
+        .terms-container {
+            max-width: 1000px;
+            margin: 120px auto 80px;
+            padding: 0 5%;
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .terms-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, white, #E0E7FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .terms-header p {
+            font-size: 1.1rem;
+            color: #94A3B8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .terms-content {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .terms-section {
+            margin-bottom: 40px;
+        }
+
+        .terms-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: white;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .terms-section h3 {
+            font-size: 1.2rem;
+            margin: 25px 0 15px;
+            color: white;
+        }
+
+        .terms-section p, .terms-section ul {
+            margin-bottom: 15px;
+            color: #E2E8F0;
+        }
+
+        .terms-section ul {
+            padding-left: 20px;
+        }
+
+        .terms-section li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            background: rgba(99, 102, 241, 0.1);
+            padding: 2px 5px;
+            border-radius: 4px;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(2, 6, 23, 0.8);
+            padding: 80px 5% 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, white, #E0E7FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: #94A3B8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #64748B;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .terms-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .navbar {
+                padding: 15px 5%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .terms-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .terms-content {
+                padding: 30px;
+            }
+
+            /* Mobile Navigation */
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: rgba(2, 6, 23, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 80px 30px 30px;
+                transition: right 0.3s ease;
+                z-index: 1000;
+                gap: 1.5rem;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.1rem;
+                padding: 10px 0;
+            }
+
+            .nav-content .cta-button {
+                display: none;
+            }
+
+            .mobile-cta {
+                display: block !important;
+                width: 100%;
+                margin-top: 20px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .terms-header h1 {
+                font-size: 2rem;
+            }
+            
+            .terms-header p {
+                font-size: 1rem;
+            }
+            
+            .logo {
+                font-size: 1.2rem;
+            }
+            
+            .logo-icon {
+                font-size: 1.1rem;
+            }
+            
+            .terms-section h2 {
+                font-size: 1.3rem;
+            }
+            
+            .terms-content {
+                padding: 25px;
+            }
+        }
+
+        /* Mobile CTA Button - Initially Hidden */
+        .mobile-cta {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-circle circle-1"></div>
+    <div class="floating-circle circle-2"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <i class="fas fa-robot logo-icon"></i>
+                <span>Devaland Automation Agency</span>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="index.html#solutions">Solutions</a>
+                <a href="index.html#process">Process</a>
+                <a href="index.html#testimonials">Testimonials</a>
+                <a href="https://calendly.com/devaland/30min" class="cta-button mobile-cta">Get Started</a>
+            </div>
+            <a href="https://calendly.com/devaland/30min" class="cta-button desktop-cta">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Terms Content -->
+    <div class="terms-container">
+        <div class="terms-header">
+            <h1>Terms and Conditions</h1>
+            <p>Last Updated: January 2024</p>
+        </div>
+        
+        <div class="terms-content">
+            <div class="terms-section">
+                <h2>Welcome to Devaland Marketing Agency!</h2>
+                <p>These terms and conditions outline the rules and regulations for the use of Devaland Marketing Agency's Website, located at www.devaland.com.</p>
+                <p>By accessing this website, we assume you accept these terms and conditions. Do not continue to use Devaland Marketing Agency if you do not agree to take all of the terms and conditions stated on this page.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>Cookies</h2>
+                <p>The website uses cookies to help personalize your online experience. By accessing Devaland Marketing Agency, you agree to use the required cookies.</p>
+                <p>A cookie is a text file that is placed on your hard disk by a web page server. Cookies cannot be used to run programs or deliver viruses to your computer. Cookies are uniquely assigned to you and can only be read by a web server in the domain that issued the cookie to you.</p>
+                <p>We may use cookies to collect, store, and track information for statistical or marketing purposes to operate our website. You can accept or decline optional Cookies. Some required Cookies are necessary for the operation of our website.</p>
+                <p>These cookies do not require your consent as they always work. Please keep in mind that by accepting required Cookies, you also accept third-party Cookies, which might be used via third-party provided services if you use such services on our website, for example, a video display window provided by third parties and integrated into our website.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>License</h2>
+                <p>Unless otherwise stated, Devaland Marketing Agency and/or its licensors own the intellectual property rights for all material on Devaland Marketing Agency. All intellectual property rights are reserved. You may access this from Devaland Marketing Agency for your personal use subject to restrictions set in these terms and conditions.</p>
+                
+                <h3>You must not:</h3>
+                <ul>
+                    <li>Copy or republish material from Devaland Marketing Agency</li>
+                    <li>Sell, rent, or sub-license material from Devaland Marketing Agency</li>
+                    <li>Reproduce, duplicate, or copy material from Devaland Marketing Agency</li>
+                    <li>Redistribute content from Devaland Marketing Agency</li>
+                </ul>
+                
+                <p>This Agreement shall begin on the date hereof.</p>
+                <p>Parts of this website offer users an opportunity to post and exchange opinions and information in certain areas of the website. Devaland Marketing Agency does not filter, edit, publish, or review Comments before their presence on the website. Comments do not reflect the views and opinions of Devaland Marketing Agency, its agents, and/or affiliates.</p>
+                <p>Comments reflect the views and opinions of the person who posts their views and opinions. To the extent permitted by applicable laws, Devaland Marketing Agency shall not be liable for the Comments or any liability, damages, or expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of the Comments on this website.</p>
+                <p>Devaland Marketing Agency reserves the right to monitor all Comments and remove any Comments that can be considered inappropriate, offensive, or cause a breach of these Terms and Conditions.</p>
+                
+                <h3>You warrant and represent that:</h3>
+                <ul>
+                    <li>You are entitled to post the Comments on our website and have all necessary licenses and consents to do so;</li>
+                    <li>The Comments do not invade any intellectual property right, including without limitation copyright, patent, or trademark of any third party;</li>
+                    <li>The Comments do not contain any defamatory, libelous, offensive, indecent, or otherwise unlawful material, which is an invasion of privacy.</li>
+                    <li>The Comments will not be used to solicit or promote business or custom or present commercial activities or unlawful activity.</li>
+                </ul>
+                
+                <p>You hereby grant Devaland Marketing Agency a non-exclusive license to use, reproduce, edit, and authorize others to use, reproduce, and edit any of your Comments in all forms, formats, or media.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>Hyperlinking to our Content</h2>
+                <p>The following organizations may link to our Website without prior written approval:</p>
+                <ul>
+                    <li>Government agencies;</li>
+                    <li>Search engines;</li>
+                    <li>News organizations;</li>
+                    <li>Online directory distributors may link to our Website in the same manner as they hyperlink to the Websites of other listed businesses; and</li>
+                    <li>System-wide Accredited Businesses except soliciting non-profit organizations, charity shopping malls, and charity fundraising groups which may not hyperlink to our Web site.</li>
+                </ul>
+                
+                <p>These organizations may link to our home page, to publications, or other Website information so long as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement, or approval of the linking party and its products and/or services; and (c) fits within the context of the linking party's site.</p>
+                <p>We may consider and approve other link requests from the following types of organizations:</p>
+                <ul>
+                    <li>Commonly-known consumer and/or business information sources;</li>
+                    <li>Associations or other groups representing charities;</li>
+                    <li>Online directory distributors;</li>
+                    <li>Internet portals;</li>
+                    <li>Accounting, law, and consulting firms; and</li>
+                    <li>Educational institutions and trade associations.</li>
+                </ul>
+                
+                <p>We will approve link requests from these organizations if we decide that: (a) the link would not make us look unfavorably to ourselves or our accredited businesses; (b) the organization does not have any negative records with us; (c) the benefit to us from the visibility of the hyperlink compensates the absence of Devaland Marketing Agency; and (d) the link is in the context of general resource information.</p>
+                <p>These organizations may link to our home page so long as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement, or approval of the linking party and its products or services; and (c) fits within the context of the linking party's site.</p>
+                <p>If you are one of the organizations listed in paragraph 2 above and are interested in linking to our website, you must inform us by sending an e-mail to Devaland Marketing Agency.</p>
+                <p>Please include your name, your organization name, and contact information as well as the URL of your site, a list of any URLs from which you intend to link to our Website, and a list of the URLs on our site to which you would like to link. Wait 2-3 weeks for a response.</p>
+                <p>Approved organizations may hyperlink to our Website as follows:</p>
+                <ul>
+                    <li>By use of our corporate name; or</li>
+                    <li>By use of the uniform resource locator being linked to; or</li>
+                    <li>By using any other description of our Website being linked to that makes sense within the context and format of content on the linking party's site.</li>
+                </ul>
+                
+                <p>No use of Devaland Marketing Agency's logo or other artwork will be allowed for linking absent a trademark license agreement.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>Content Liability</h2>
+                <p>We shall not be held responsible for any content that appears on your Website. You agree to protect and defend us against all claims that are raised on your Website. No link(s) should appear on any Website that may be interpreted as libelous, obscene, or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>Reservation of Rights</h2>
+                <p>We reserve the right to request that you remove all links or any particular link to our Website. You approve to immediately remove all links to our Website upon request. We also reserve the right to amend these terms and conditions and its linking policy at any time. By continuously linking to our Website, you agree to be bound to and follow these linking terms and conditions.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>Removal of links from our website</h2>
+                <p>If you find any link on our Website that is offensive for any reason, you are free to contact and inform us at any moment. We will consider requests to remove links, but we are not obligated to or so or to respond to you directly.</p>
+                <p>We do not ensure that the information on this website is correct. We do not warrant its completeness or accuracy, nor do we promise to ensure that the website remains available or that the material on the website is kept up to date.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>Disclaimer</h2>
+                <p>To the maximum extent permitted by applicable law, we exclude all representations, warranties, and conditions relating to our website and the use of this website. Nothing in this disclaimer will:</p>
+                <ul>
+                    <li>Limit or exclude our or your liability for death or personal injury;</li>
+                    <li>Limit or exclude our or your liability for fraud or fraudulent misrepresentation;</li>
+                    <li>Limit any of our or your liabilities in any way that is not permitted under applicable law; or</li>
+                    <li>Exclude any of our or your liabilities that may not be excluded under applicable law.</li>
+                </ul>
+                
+                <p>The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort, and for breach of statutory duty.</p>
+                <p>As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Devaland Automation Agency</h4>
+                <p>Transform Your Business with Goal-Driven AI Solutions</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html#solutions">Solutions</a></li>
+                    <li><a href="index.html#process">Our Process</a></li>
+                    <li><a href="index.html#testimonials">Case Studies</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="index.html#solutions">AI Automation</a></li>
+                    <li><a href="index.html#solutions">Text AI Agents</a></li>
+                    <li><a href="index.html#solutions">Voice AI Agents</a></li>
+                    <li><a href="index.html#solutions">Predictive Analytics</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="mailto:office@devaland.com">office@devaland.com</a></li>
+                    <li><a href="tel:+40 (721) 269 312">+40 (721) 269 312</a></li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/marius-andronie"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/digitalvampire13/"><i class="fab fa-instagram"></i> Instagram</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            Copyright &copy; 2025 - DEVALAND MARKETING S.R.L. All Rights Reserved. VAT Number: RO50841395.
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Change icon based on menu state
+            if (navLinks.classList.contains('active')) {
+                menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+    </script>
+</body>
+</html>
