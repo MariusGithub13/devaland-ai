@@ -12,7 +12,7 @@ jobs:
         run: |
           echo '<?xml version="1.0" encoding="UTF-8"?>
           <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-            <url><loc>https://yourusername.github.io/</loc></url>
+            <url><loc>https://github.com/MariusGithub13/devaland-ai</loc></url>
           </urlset>' > sitemap.xml
       - name: Commit and push
         run: |
