@@ -7,3 +7,5 @@ phone: "+40 (721) 269 312"
 social:
   linkedin: "https://www.linkedin.com/in/marius-andronie"
   instagram: "https://www.instagram.com/digitalvampire13/"
+plugins:
+  - jekyll-sitemap
