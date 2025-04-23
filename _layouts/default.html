@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include includes/head.html %}
+    {% if page.stylesheet %}
+    <link rel="stylesheet" href="/assets/css/{{ page.stylesheet }}">
+    {% endif %}
+</head>
+<body>
+    {% include includes/floating-elements.html %}
+    {% include includes/header.html %}
+    
+    {{ content }}
+    
+    {% include includes/footer.html %}
+    
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/mobile-menu.js"></script>
+    {% if page.scripts %}
+      {% for script in page.scripts %}
+        <script src="/assets/js/{{ script }}"></script>
+      {% endfor %}
+    {% endif %}
+</body>
+</html>
